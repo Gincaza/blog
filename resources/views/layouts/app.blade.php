@@ -9,9 +9,9 @@
 <body>
     <header>
         <nav>
-            <a href="{{ route('home') }}">Home</a>
-            <a href="{{ route('about') }}">About</a>
-            <a href="{{ route('posts') }}">Posts</a>
+           <a class="{{ Request::routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
+           <a class="{{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Sobre</a>
+           <a class="{{ Request::routeIs('posts') ? 'active' : '' }}" href="{{ route('posts') }}">Posts</a>
         </nav>
     </header>
     <div class="container">
