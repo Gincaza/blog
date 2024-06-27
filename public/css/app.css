@@ -72,3 +72,26 @@ form button {
 form button:hover {
     background-color: #555;
 }
+
+.flash-error {
+    background-color: #ffcccc;
+    border: 1px solid #aa0000;
+    color: #aa0000;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.flash-success {
+    background-color: #ccffcc;
+    border: 1px solid #00aa00;
+    color: #00aa00;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: #aa0000;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

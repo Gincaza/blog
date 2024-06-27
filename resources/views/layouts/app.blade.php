@@ -14,6 +14,7 @@
            <a class="{{ Request::routeIs('posts.create') ? 'active' : '' }}" href="{{ route('posts.create') }}">Posts</a>
         </nav>
     </header>
+
     <div class="container">
         @yield('content')
     </div>
