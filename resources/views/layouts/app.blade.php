@@ -11,7 +11,7 @@
         <nav>
            <a class="{{ Request::routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
            <a class="{{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Sobre</a>
-           <a class="{{ Request::routeIs('posts') ? 'active' : '' }}" href="{{ route('posts') }}">Posts</a>
+           <a class="{{ Request::routeIs('posts.create') ? 'active' : '' }}" href="{{ route('posts.create') }}">Posts</a>
         </nav>
     </header>
     <div class="container">
