@@ -4,14 +4,7 @@
 
 @section('content')
 
-    @if ($errors->any())
-    <div class="flash-error">
-        <b>There are some erros in your submission:</b>
-        @foreach ($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
-    @endif
+    @includeWhen($errors->any(), '_error')
 
     @if (session('success'))
     <div class="flash-success">
