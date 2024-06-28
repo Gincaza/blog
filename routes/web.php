@@ -32,8 +32,3 @@ Route::name('posts.')->prefix('posts')->group(function () {
             );
     })->name('store');
 });
-
-
-
-
-
