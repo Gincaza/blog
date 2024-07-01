@@ -29,14 +29,17 @@ class PostController extends Controller
         $title = $validated['title'];
         $description = $validated['description'];
 
+        // Creating a new post. It's necessary creating a new object to save it.
         $post = new Post();
         $post->title = $title;
         $post->description = $description;
+
+        $post->save();
     
         return redirect()
             ->route('posts.create')
             ->with(
-                'success' , "Post is submitted! Title: {$title} Description: {$description}"
+                'success' , "Post is submitted! Title: {$post->title} Description: {$post->description}"
             );
     }
 
