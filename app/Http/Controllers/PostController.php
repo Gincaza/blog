@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post;
+
 class PostController extends Controller
 {
     /**
@@ -26,6 +28,10 @@ class PostController extends Controller
         
         $title = $validated['title'];
         $description = $validated['description'];
+
+        $post = new Post();
+        $post->title = $title;
+        $post->description = $description;
     
         return redirect()
             ->route('posts.create')
