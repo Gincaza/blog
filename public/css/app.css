@@ -95,3 +95,27 @@ form button:hover {
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+/* Estilos para os posts */
+.post-item {
+    background-color: #f9f9f9; /* Cor de fundo do post */
+    border: 1px solid #ccc; /* Borda do post */
+    border-radius: 5px; /* Arredondamento da borda */
+    margin-bottom: 20px; /* Espaçamento entre os posts */
+    padding: 20px; /* Espaçamento interno do post */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do post */
+}
+
+.post-item:nth-child(odd) {
+    background-color: #e6e6e6; /* Cor de fundo dos posts ímpares */
+}
+
+.post-content h2 {
+    color: #333; /* Cor do título do post */
+    margin-bottom: 10px; /* Espaçamento entre o título e a descrição */
+}
+
+.post-content p {
+    color: #666; /* Cor da descrição do post */
+}
+
