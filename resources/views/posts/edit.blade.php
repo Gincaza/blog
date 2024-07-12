@@ -18,13 +18,13 @@
         @csrf
         @method('PUT')
         <label for="title">Title</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" value="{{ old('title', $post->title)}}">
         @error('title')
             <div class="error">{{ $message }}</div>            
         @enderror
 
         <label for="description">Description</label>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10">{{ old('description', $post->description) }}</textarea>
         @error('description')
             <div class="error">{{ $message }}</div>
         @enderror

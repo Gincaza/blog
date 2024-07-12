@@ -64,7 +64,21 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|min:10',
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
+
+        $post->save();
+
+        return redirect()
+            ->route('posts.edit', ['post' => $post->id])
+            ->with('success', 'Post is updated!');
     }
 
     /**
