@@ -1,18 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Register')
-
+@section('name', 'Login')
+    
 @section('content')
-<h1>Register</h1>
+<h1>Login</h1>
 
-<form action="{{ route('register') }}" method="post">
+<form action="{{ route('login') }}" method="post">
     @csrf
-
-    <label for="name">Name</label>
-    <input class="@error('name') error-border @enderror" type="text" name="name" value="{{ old('name') }}">
-    @error('name')
-        <div class="error">{{ $message }}</div>
-    @enderror
 
     <label for="email">Email</label>
     <input class="@error('email') error-border @enderror" type="email" name="email" value="{{ old('email') }}">
@@ -26,8 +20,8 @@
         <div class="error">{{ $message }}</div>
     @enderror
 
-    <button type="submit">Register</button>
+    <button type="submit">Login</button>
 
-    If you already have an account, <a href="{{ route('login') }}">login</a>.
+    If you don't have an account, <a href="{{ route('register') }}">register</a>.
 </form>
 @endsection
