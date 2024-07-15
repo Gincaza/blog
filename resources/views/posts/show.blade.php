@@ -8,6 +8,11 @@
         <h2>{{ $post->title }}</h2>
         <p>{{ $post->description }}</p>
         <a href="{{ route('posts.edit', ['post' => $post->id]) }}">Edit</a>
+        <form action="{{ route('posts.destroy', ['post' => $post->id]) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="delete-button" type="submit">Delete</button>
+        </form>
     </div>
 </div>
 @endsection

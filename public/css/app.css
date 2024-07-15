@@ -35,7 +35,7 @@ p {
     background-color: chocolate;
 }
 
-/* Estilos específicos para o formulário */
+/* Form styles */
 form {
     background-color: #f9f9f9;
     padding: 20px;
@@ -96,26 +96,25 @@ form button:hover {
     margin-bottom: 10px;
 }
 
-/* Estilos para os posts */
+/* Post styles */
 .post-item {
-    background-color: #f9f9f9; /* Cor de fundo do post */
-    border: 1px solid #ccc; /* Borda do post */
-    border-radius: 5px; /* Arredondamento da borda */
-    margin-bottom: 20px; /* Espaçamento entre os posts */
-    padding: 20px; /* Espaçamento interno do post */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do post */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-item:nth-child(odd) {
-    background-color: #e6e6e6; /* Cor de fundo dos posts ímpares */
+    background-color: #e6e6e6;
 }
 
 .post-content h2 {
-    color: #333; /* Cor do título do post */
-    margin-bottom: 10px; /* Espaçamento entre o título e a descrição */
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .post-content p {
-    color: #666; /* Cor da descrição do post */
+    color: #666;
 }
-
