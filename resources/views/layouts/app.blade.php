@@ -11,7 +11,13 @@
         <nav>
            <a class="{{ Request::routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
            <a class="{{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
+           @auth
            <a class="{{ Request::routeIs('posts.create') ? 'active' : '' }}" href="{{ route('posts.create') }}">Posts</a>
+           <a class="{{ Request::routeIs('logout') ? 'active' : '' }}" href="{{ route('logout') }}">Logout</a>
+           <p class="user-info">Logged in as <b>{{ Auth::user()->name }}</b></p>
+           @else
+           <a href="{{ route('login') }}">Login</a>
+           @endauth
         </nav>
     </header>
 

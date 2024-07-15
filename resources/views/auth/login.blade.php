@@ -3,25 +3,34 @@
 @section('name', 'Login')
     
 @section('content')
-<h1>Login</h1>
 
-<form action="{{ route('login') }}" method="post">
-    @csrf
+    @includeWhen($errors->any(), '_error')
 
-    <label for="email">Email</label>
-    <input class="@error('email') error-border @enderror" type="email" name="email" value="{{ old('email') }}">
-    @error('email')
-        <div class="error">{{ $message }}</div>
-    @enderror
+    @if (session('success'))
+    <div class="flash-success">
+        {{ session('success') }}
+    </div>      
+    @endif
 
-    <label for="password">Password</label>
-    <input class="@error('password') error-border @enderror" type="password" name="password">
-    @error('password')
-        <div class="error">{{ $message }}</div>
-    @enderror
+    <h1>Login</h1>
 
-    <button type="submit">Login</button>
+    <form action="{{ route('login') }}" method="post">
+        @csrf
 
-    If you don't have an account, <a href="{{ route('register') }}">register</a>.
-</form>
+        <label for="email">Email</label>
+        <input class="@error('email') error-border @enderror" type="email" name="email" value="{{ old('email') }}">
+        @error('email')
+            <div class="error">{{ $message }}</div>
+        @enderror
+
+        <label for="password">Password</label>
+        <input class="@error('password') error-border @enderror" type="password" name="password">
+        @error('password')
+            <div class="error">{{ $message }}</div>
+        @enderror
+
+        <button type="submit">Login</button>
+
+        If you don't have an account, <a href="{{ route('register') }}">register</a>.
+    </form>
 @endsection
