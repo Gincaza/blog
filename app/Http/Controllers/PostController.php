@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\PostFormRequest;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -19,20 +19,14 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostFormRequest $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required',
-        ]);
+        $request->validated();
         
-        $title = $validated['title'];
-        $description = $validated['description'];
-
         // Creating a new post. It's necessary creating a new object to save it.
         $post = new Post();
-        $post->title = $title;
-        $post->description = $description;
+        $post->title = $request->input('title');
+        $post->description = $request->input('description');
 
         $post->save();
     
@@ -62,12 +56,9 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PostFormRequest $request, string $id)
     {
-        $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required|min:10',
-        ]);
+        $request->validated();
 
         $post = Post::findOrFail($id);
 
