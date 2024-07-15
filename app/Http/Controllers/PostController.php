@@ -21,14 +21,10 @@ class PostController extends Controller
      */
     public function store(PostFormRequest $request)
     {
-        $request->validated();
+        $validated = $request->validated();
         
         // Creating a new post. It's necessary creating a new object to save it.
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-
-        $post->save();
+        $post = Post::create($validated);
     
         return redirect()
             ->route('posts.create')
@@ -56,14 +52,11 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostFormRequest $request, string $id)
+    public function update(PostFormRequest $request, Post $post)
     {
-        $request->validated();
+        $validated = $request->validated();
 
-        $post = Post::findOrFail($id);
-
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
+        $post->update($validated);
 
         $post->save();
 
