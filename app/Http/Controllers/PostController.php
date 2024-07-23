@@ -22,9 +22,8 @@ class PostController extends Controller
     public function store(PostFormRequest $request)
     {
         $validated = $request->validated();
-        
-        // Creating a new post. It's necessary creating a new object to save it.
-        $post = Post::create($validated);
+            
+        $post = $request->user()->posts()->create($validated);
     
         return redirect()
             ->route('posts.create')
